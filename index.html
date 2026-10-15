@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Packing List Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- Main Content Area -->
+    <main class="container">
+      <h1>Travel Packing List</h1>
+
+      <!-- Step 1: Traveler Type -->
+      <section id="step-1" class="step">
+        <h2>Who is traveling?</h2>
+        <div id="traveler-options" class="options-grid"></div>
+      </section>
+
+      <!-- Step 2: Weather -->
+      <section id="step-2" class="step hidden">
+        <h2>What is the weather like?</h2>
+        <div id="weather-options" class="options-grid"></div>
+        <div class="navigation-footer" style="margin-top: 1.5rem;">
+          <button class="btn-secondary back-btn" type="button">Back</button>
+        </div>
+      </section>
+
+      <!-- Step 3: Travel Mode -->
+      <section id="step-3" class="step hidden">
+        <h2>How are you traveling?</h2>
+        <div id="mode-options" class="options-grid"></div>
+        <div class="navigation-footer" style="margin-top: 1.5rem;">
+          <button class="btn-secondary back-btn" type="button">Back</button>
+        </div>
+      </section>
+
+      <!-- Step 4: Final Packing List -->
+      <section id="step-4" class="step hidden">
+        <h2>Your Packing List</h2>
+        <p id="trip-summary" class="trip-summary"></p>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search items...">
+        </div>
+
+        <!-- Add Custom Item -->
+        <div class="add-item-box">
+          <div class="field-control">
+            <input type="text" id="new-item-input" placeholder="Add custom item..." aria-describedby="new-item-error" aria-invalid="false">
+            <span id="new-item-error" class="field-error" role="alert"></span>
+          </div>
+          <select id="new-item-type">
+            <option value="mandatory">Mandatory</option>
+            <option value="optional">Optional</option>
+          </select>
+          <button id="add-item-btn" class="btn-primary" type="button">Add</button>
+        </div>
+
+        <!-- Dynamic Packing List Container -->
+        <div id="packing-list-container"></div>
+
+        <!-- Save and Print Controls -->
+        <div class="save-box">
+          <div class="field-control">
+            <input type="text" id="list-name-input" placeholder="Enter list name..." aria-describedby="list-name-error" aria-invalid="false">
+            <span id="list-name-error" class="field-error" role="alert"></span>
+          </div>
+          <button id="save-list-btn" class="btn-primary" type="button">Save List</button>
+          <button id="print-btn" class="btn-secondary" type="button">Print</button>
+        </div>
+
+        <!-- Navigation Buttons at the Bottom -->
+        <div class="navigation-footer" style="display: flex; gap: 0.5rem; margin-top: 1.5rem;">
+          <button class="btn-secondary back-btn" type="button">Back</button>
+          <button class="btn-secondary home-btn" type="button">Start Over</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar Panel: Saved Lists -->
+    <aside class="sidebar-panel">
+      <h2>Saved Lists</h2>
+      <div id="saved-lists-container">
+        <p style="font-size:0.85rem; color:#64748b;">No saved lists.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
